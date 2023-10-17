@@ -7,7 +7,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/IN3PIRE/Prodia-Web-GUI/
    ```
 
 2. Open the `index.html` file in your preferred web browser.
