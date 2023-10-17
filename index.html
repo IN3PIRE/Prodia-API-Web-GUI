@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prodia API Integration</title>
+  <style>
+    /* CSS styles for the data display */
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #F2F2F2;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .data-item {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Prodia API Integration Example</h1>
+    <div id="data"></div>
+  </div>
+
+  <script>
+    // Fetch data from Prodia API
+    fetch('YOUR_API_ENDPOINT')
+      .then(response => response.json())
+      .then(data => {
+        // Handle the data and display it in the HTML document
+        const dataContainer = document.getElementById('data');
+
+        // Iterate through the data and create a display item for each entry
+        data.forEach(item => {
+          const dataItem = document.createElement('div');
+          dataItem.className = 'data-item';
+
+          // Modify this part according to the structure of your data
+          const itemText = document.createTextNode(item.name);
+          dataItem.appendChild(itemText);
+
+          dataContainer.appendChild(dataItem);
+        });
+      })
+      .catch(error => {
+        // Handle any errors that occur during the API request
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>
